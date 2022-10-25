@@ -1,15 +1,20 @@
 package org.dfpl.lecture.blueprints.assignment;
 
-import org.dfpl.lecture.blueprints.memory.InMemoryGraph;
-
 import com.tinkerpop.blueprints.revised.Direction;
 import com.tinkerpop.blueprints.revised.Edge;
 import com.tinkerpop.blueprints.revised.Graph;
 import com.tinkerpop.blueprints.revised.Vertex;
+import org.dfpl.lecture.blueprints.memory.InMemoryGraph;
 
 public class UnitTest {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		String dbID = "root";
+		String dbPW = "1234";
+		String dbName = "team?";
+
 		Graph g = new InMemoryGraph();
+		//Graph g = new PersistentGraph(dbID, dbPW, dbName);
+
 		Vertex v1 = g.addVertex("1");
 		System.out.println("[1] " + v1.getId());
 		v1 = g.addVertex("1");
