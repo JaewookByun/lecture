@@ -11,7 +11,11 @@ import org.dfpl.lecture.blueprints.memory.InMemoryGraph;
 
 public class SmallDataTest {
 
+	// isEvenTag, addTag, subTag, divTag 의 문자열은 바뀔 수 있음
 	public static String isEvenTag = "isEven";
+	public static String addTag = "add";
+	public static String subTag = "sub";
+	public static String divTag = "div";
 
 	public static void main(String[] args) throws Exception {
 
@@ -47,9 +51,9 @@ public class SmallDataTest {
 			int v2Int = Integer.parseInt(v2.getId());
 			Edge e12 = g.addEdge(v1, v2, "l");
 			e12.setProperty(isEvenTag, ((v1Int + v2Int) % 2 == 0));
-			e12.setProperty("add", v1Int + v2Int);
-			e12.setProperty("sub", v1Int - v2Int);
-			e12.setProperty("div", (v1Int / (double) v2Int));
+			e12.setProperty(addTag, v1Int + v2Int);
+			e12.setProperty(subTag, v1Int - v2Int);
+			e12.setProperty(divTag, (v1Int / (double) v2Int));
 
 		}
 
