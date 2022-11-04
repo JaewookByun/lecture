@@ -38,6 +38,7 @@ public interface Vertex extends Element {
 	 */
 	public Collection<Vertex> getVertices(Direction direction, String... labels) throws IllegalArgumentException;
 
+	public Collection<Vertex> getTwoHopVertices(Direction direction, String... labels) throws IllegalArgumentException;
 	
 	/**
 	 * Return the vertices adjacent to the vertex according to the provided
@@ -45,13 +46,13 @@ public interface Vertex extends Element {
 	 * (i.e. those vertices that are connected by more than one edge).
 	 *
 	 * @param direction the direction of the edges of the adjacent vertices
-	 * @param key-value pair matched to out-vertices' property 
+	 * @param key-value pair matched to in or out edges' property
 	 * @param labels    the labels of the edges of the adjacent vertices
 	 * @return an iterable of adjacent vertices
 	 * @throws IllegalArgumentException is thrown if a direction of both is provided
 	 */
 	public Collection<Vertex> getVertices(Direction direction, String key, Object value, String... labels) throws IllegalArgumentException;
-	
+
 	/**
 	 * Remove the element from the graph.
 	 */
