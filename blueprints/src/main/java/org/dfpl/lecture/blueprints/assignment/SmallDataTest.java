@@ -45,10 +45,12 @@ public class SmallDataTest {
                 System.out.println(cnt + " lines read...");
             }
             String[] arr = line.split(delimiter);
-            Vertex v1 = g.addVertex(arr[0]);
-            int v1Int = Integer.parseInt(v1.getId());
-            Vertex v2 = g.addVertex(arr[1]);
-            int v2Int = Integer.parseInt(v2.getId());
+            String v1str = "s"+arr[0];
+            String v2str = "s"+arr[1];
+            Vertex v1 = g.addVertex(v1str);
+            int v1Int = Integer.parseInt(arr[0]);
+            Vertex v2 = g.addVertex(v2str);
+            int v2Int = Integer.parseInt(arr[1]);
             Edge e12 = g.addEdge(v1, v2, "l");
             e12.setProperty(isEvenTag, ((v1Int + v2Int) % 2 == 0));
             e12.setProperty(addTag, v1Int + v2Int);
